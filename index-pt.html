@@ -23,22 +23,80 @@
 
 <body class="bg-slate-50 text-slate-900">
 
-  <!-- Language Switcher -->
-  <div class="absolute top-4 right-4 z-50 flex gap-2">
-    <a href="index.html" class="rounded-lg bg-white/80 backdrop-blur px-3 py-1 text-sm font-semibold hover:bg-white shadow-sm">EN</a>
-    <a href="index-pt.html"
-      class="rounded-lg bg-black px-3 py-1 text-sm font-semibold text-white shadow-sm">PT</a>
-  </div>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md shadow-sm transition-all duration-300" id="main-header">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="text-xl font-bold tracking-tight text-slate-900">
+        Tayse Dantas <span class="text-slate-600 font-normal">| Imóveis de Luxo</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-black transition">Sobre</a>
+        <a href="#video-tour" class="hover:text-black transition">Video</a>
+        <a href="#gallery" class="hover:text-black transition">Galeria</a>
+        <a href="#amenities" class="hover:text-black transition">Amenidades</a>
+        <a href="#contact" class="hover:text-black transition">Contato</a>
+      </nav>
+
+      <!-- Language Switcher & Mobile Menu Button -->
+      <div class="flex items-center gap-4">
+        <!-- Language -->
+        <div class="flex gap-2 text-sm font-semibold">
+          <a href="index.html" class="px-2 py-1 rounded hover:bg-slate-200">EN</a>
+          <a href="index-pt.html" class="px-2 py-1 rounded bg-black text-white">PT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-black focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
+      <nav class="flex flex-col p-6 space-y-4 text-center font-medium text-slate-600">
+        <a href="#about" class="hover:text-black" onclick="toggleMenu()">Sobre</a>
+        <a href="#video-tour" class="hover:text-black" onclick="toggleMenu()">Video</a>
+        <a href="#gallery" class="hover:text-black" onclick="toggleMenu()">Galeria</a>
+        <a href="#amenities" class="hover:text-black" onclick="toggleMenu()">Amenidades</a>
+        <a href="#contact" class="hover:text-black" onclick="toggleMenu()">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+  </script>
 
   <!-- HERO -->
-  <section class="relative bg-cover bg-center"
-    style="background-image: url('assets/lotus-edge-boca-raton-91.jpeg'); height: 85vh;">
-    <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative z-10 container mx-auto px-6 py-24 text-center text-white">
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-        Lotus Edge – O Novo Padrão de Luxo em Boca Raton
+  <section class="relative h-[85vh] overflow-hidden">
+    <!-- Slideshow Background -->
+    <div id="hero-slider" class="absolute inset-0 z-0">
+      <!-- Images added via JS -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+    <!-- Content -->
+    <div class="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
+      <img src="assets/logo-taysecorretora.png" alt="Tayse Dantas Realtor" class="mb-6 h-auto max-w-[150px] md:max-w-[200px] mx-auto filter drop-shadow-md">
+      <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
+        O Novo Padrão de Luxo na Florida
       </h1>
-      <p class="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
+      <p class="mt-4 text-lg sm:text-xl max-w-1xl mx-auto">
         Residências ultra-modernas com amenidades de resort e lifestyle exclusivo na Flórida.
       </p>
 
@@ -53,6 +111,41 @@
       </div>
     </div>
   </section>
+
+  <script>
+    const heroImages = [
+      'assets/lotus-edge-exterior-modern.jpeg',
+      'assets/lotus-edge-resort-pool.jpeg',
+      'assets/lotus-edge-clubhouse-entrance.jpeg',
+      'assets/lotus-edge-interior-kitchen.jpeg',
+      'assets/lotus-edge-exterior-facade.jpeg'
+    ];
+    
+    const sliderContainer = document.getElementById('hero-slider');
+    
+    if (sliderContainer) {
+      let currentSlide = 0;
+
+      // Preload images and create elements
+      heroImages.forEach((src, index) => {
+        const img = document.createElement('div');
+        img.className = `absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+        img.style.backgroundImage = `url('${src}')`;
+        sliderContainer.appendChild(img);
+      });
+
+      setInterval(() => {
+        const slides = sliderContainer.children;
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+      }, 5000); // Change every 5 seconds
+    }
+  </script>
 
   <!-- VIDEO TOUR -->
   <section id="video-tour" class="container mx-auto px-6 py-16">
@@ -84,42 +177,42 @@
           Perfeito para investidores, famílias e quem busca o melhor do mercado imobiliário em Boca Raton.
         </p>
         <div class="pt-4">
-          <a href="#contact" class="inline-block text-emerald-600 font-semibold hover:underline">Solicitar mais informações &rarr;</a>
+          <a href="#contact" class="inline-block text-black font-semibold hover:underline">Solicitar mais informações &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- GALERIA -->
-  <section class="container mx-auto px-6 py-16 bg-white">
+  <section id="gallery" class="container mx-auto px-6 py-16 bg-white">
     <h2 class="text-3xl font-bold text-center">Galeria de Fotos</h2>
     <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">Ambientes sofisticados e acabamentos de alto padrão.</p>
 
     <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-container">
-      <img src="assets/lotus_edge_pool.jpeg"
+      <img src="assets/lotus-edge-boca-raton-91.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(0)" alt="Piscina Lotus Edge" />
-      <img src="assets/175bcd02ee706e90a3530d1a33b3e2d3150ab17dab6869300c193e6ef1bd2cd8.jpeg"
+        onclick="openModal(0)" alt="Entrada do Clubhouse" />
+      <img src="assets/lotus-edge-clubhouse-entrance.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(1)" alt="Interior Lotus Edge" />
-      <img src="assets/lotus-edge-honolulu-video-tour.jpeg"
+        onclick="openModal(1)" alt="Entrada do Clubhouse" />
+      <img src="assets/lotus-edge-interior-kitchen.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(2)" alt="Video Tour Thumbnail" />
-      <img src="assets/lotus-edge-boca-raton-21.jpeg"
+        onclick="openModal(2)" alt="Cozinha Moderna" />
+      <img src="assets/lotus-edge-exterior-modern.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(3)" alt="Fachada Lotus Edge" />
-      <img src="assets/loe-club-spotlight-lp-mainimg-1-18-24-nk.jpeg"
+        onclick="openModal(3)" alt="Fachada Moderna" />
+      <img src="assets/lotus-edge-resort-pool.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(4)" alt="Clubhouse" />
-      <img src="assets/maldives-front-elevation.jpeg"
+        onclick="openModal(4)" alt="Piscina Estilo Resort" />
+      <img src="assets/lotus-edge-patio-pool.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(5)" alt="Modelo Maldives" />
-      <img src="assets/lotus-edge-condominio-boca-raton.jpeg"
+        onclick="openModal(5)" alt="Pátio e Piscina" />
+      <img src="assets/lotus-edge-bathroom-master.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(6)" alt="Condomínio Boca Raton" />
-      <img src="assets/maldives-patio.jpeg"
+        onclick="openModal(6)" alt="Banheiro Principal" />
+      <img src="assets/lotus-edge-exterior-facade.jpeg"
         class="w-full h-40 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition"
-        onclick="openModal(7)" alt="Pátio Maldives" />
+        onclick="openModal(7)" alt="Fachada Externa" />
     </div>
   </section>
 
@@ -199,7 +292,7 @@
   </script>
 
   <!-- AMENIDADES -->
-  <section class="container mx-auto px-6 py-16 bg-slate-50">
+  <section id="amenities" class="container mx-auto px-6 py-16 bg-slate-50">
     <h2 class="text-3xl font-bold text-center">Amenidades e Estilo de Vida</h2>
     <p class="text-center text-slate-700 max-w-3xl mx-auto mt-4">
       O Lotus Edge oferece um clubhouse estilo resort, piscinas deslumbrantes, academia de última geração e proximidade com as melhores praias e centros comerciais de Boca Raton.
@@ -225,7 +318,7 @@
   </section>
 
   <!-- Sobre Tayse (NOVO) -->
-  <section class="container mx-auto px-6 py-16">
+  <section id="about" class="container mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
       <!-- Imagem de Perfil -->
       <div class="w-full md:w-1/3">
@@ -237,7 +330,7 @@
       <div class="w-full md:w-2/3 space-y-6 text-slate-700">
         <div>
           <h2 class="text-3xl font-bold text-slate-900">Sobre Tayse Dantas</h2>
-          <p class="text-lg text-emerald-700 font-semibold mt-1">Consultora Imobiliária de Luxo | Flórida</p>
+          <p class="text-lg text-black font-semibold mt-1">Consultora Imobiliária de Luxo | Flórida</p>
         </div>
         
         <p>
@@ -258,16 +351,16 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-sm font-medium text-slate-800">
           <div class="flex items-center gap-2">
-            <span class="text-emerald-600">✓</span> Bagagem Executiva Internacional
+            <span class="text-black">✓</span> Bagagem Executiva Internacional
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-emerald-600">✓</span> Representação de Clientes Globais
+            <span class="text-black">✓</span> Representação de Clientes Globais
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-emerald-600">✓</span> Expertise em Casas de Férias e Rentabilidade
+            <span class="text-black">✓</span> Expertise em Casas de Férias e Rentabilidade
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-emerald-600">✓</span> Visão de Mercado Refinada
+            <span class="text-black">✓</span> Visão de Mercado Refinada
           </div>
         </div>
       </div>
@@ -296,18 +389,18 @@
           </p>
           <p class="flex items-center gap-3">
             <span>📞</span> 
-            <a href="tel:+15613765295" class="underline font-semibold hover:text-emerald-600 transition">+1 (561) 376-5295</a>
+            <a href="tel:+15613765295" class="underline font-semibold hover:text-black transition">+1 (561) 376-5295</a>
           </p>
           <p class="flex items-center gap-3">
             <span>✉️</span> 
-            <a href="mailto:tayse.dantas@elliman.com" class="underline font-semibold hover:text-emerald-600 transition">tayse.dantas@elliman.com</a>
+            <a href="mailto:tayse.dantas@elliman.com" class="underline font-semibold hover:text-black transition">tayse.dantas@elliman.com</a>
           </p>
         </div>
 
         <div class="pt-6">
            <a href="https://wa.me/15613765295" target="_blank"
              class="inline-flex w-full justify-center items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500 transition">
-             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C15.31 6 18 8.69 18 12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6Z"/></svg>
+             <img src="assets/whatsapp.png" alt="WhatsApp" class="w-5 h-5 brightness-0 invert" />
              Conversar no WhatsApp
            </a>
         </div>
@@ -358,6 +451,7 @@
   <!-- WHATSAPP -->
   <a href="https://wa.me/15613765295"
     class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500">
+    <img src="assets/whatsapp.png" alt="WhatsApp" class="w-6 h-6" />
     Falar no WhatsApp
   </a>
 
