@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lotus Edge | Casas de Luxo em Boca Raton</title>
 
-  <meta name="description" content="Casas de luxo no Lotus Edge em Boca Raton, Flórida. Atendimento com Tayse Dantas, Sales Associate licenciada na Flórida, vinculada à Douglas Elliman Real Estate.">
+  <meta name="description"
+    content="Casas de luxo no Lotus Edge em Boca Raton, Flórida. Atendimento com Tayse Dantas, Sales Associate licenciada na Flórida, vinculada à Douglas Elliman Real Estate.">
 
   <link rel="icon" href="/favicon.ico">
 
@@ -14,17 +15,57 @@
   <link href="./dist/output.css" rel="stylesheet">
 
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 
   <!-- Google / Pixels mantidos como você enviou -->
   <!-- (mantive exatamente seus scripts aqui, não alterei nada) -->
 </head>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-KBPJLKSL');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17950236334"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17950236334');
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4EDPNR1EXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-4EDPNR1EXH');
+</script>
+</head>
 
 <body class="bg-slate-50 text-slate-900">
-
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBPJLKSL" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md shadow-sm transition-all duration-300" id="main-header">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md shadow-sm transition-all duration-300"
+    id="main-header">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <!-- Logo -->
       <a href="#" class="text-xl font-bold tracking-tight text-slate-900">
@@ -91,8 +132,10 @@
     <div class="absolute inset-0 bg-black/40 z-10"></div>
 
     <!-- Content -->
-    <div class="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
-      <img src="assets/logo-taysecorretora.png" alt="Tayse Dantas Realtor" class="mb-6 h-auto max-w-[150px] md:max-w-[200px] mx-auto filter drop-shadow-md">
+    <div
+      class="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
+      <img src="assets/logo-taysecorretora.png" alt="Tayse Dantas Realtor"
+        class="mb-6 h-auto max-w-[150px] md:max-w-[200px] mx-auto filter drop-shadow-md">
       <h1 class="text-4xl sm:text-5xl font-bold leading-tight">
         O Novo Padrão de Luxo na Florida
       </h1>
@@ -101,7 +144,8 @@
       </p>
 
       <div class="mt-8 flex justify-center gap-4 flex-wrap">
-        <a href="#video-tour" class="rounded-md bg-white text-slate-900 px-6 py-3 text-sm font-semibold hover:bg-slate-100 transition">
+        <a href="#video-tour"
+          class="rounded-md bg-white text-slate-900 px-6 py-3 text-sm font-semibold hover:bg-slate-100 transition">
           Ver Vídeo Tour
         </a>
         <a href="#contact"
@@ -120,9 +164,9 @@
       'assets/lotus-edge-interior-kitchen.jpeg',
       'assets/lotus-edge-exterior-facade.jpeg'
     ];
-    
+
     const sliderContainer = document.getElementById('hero-slider');
-    
+
     if (sliderContainer) {
       let currentSlide = 0;
 
@@ -138,9 +182,9 @@
         const slides = sliderContainer.children;
         slides[currentSlide].classList.remove('opacity-100');
         slides[currentSlide].classList.add('opacity-0');
-        
+
         currentSlide = (currentSlide + 1) % slides.length;
-        
+
         slides[currentSlide].classList.remove('opacity-0');
         slides[currentSlide].classList.add('opacity-100');
       }, 5000); // Change every 5 seconds
@@ -165,7 +209,8 @@
       <div class="p-4 space-y-4 text-sm bg-white rounded-xl shadow-sm border border-slate-100">
         <h3 class="font-bold text-lg text-slate-900">Detalhes Exclusivos</h3>
         <p class="text-slate-700">
-          Descubra os diferenciais do Lotus Edge com este vídeo exclusivo, mostrando as áreas de convivência em conceito aberto e acabamentos de luxo.
+          Descubra os diferenciais do Lotus Edge com este vídeo exclusivo, mostrando as áreas de convivência em conceito
+          aberto e acabamentos de luxo.
         </p>
         <ul class="list-disc list-inside text-slate-700 space-y-2 pt-2">
           <li>Design 100% contemporâneo</li>
@@ -177,7 +222,8 @@
           Perfeito para investidores, famílias e quem busca o melhor do mercado imobiliário em Boca Raton.
         </p>
         <div class="pt-4">
-          <a href="#contact" class="inline-block text-black font-semibold hover:underline">Solicitar mais informações &rarr;</a>
+          <a href="#contact" class="inline-block text-black font-semibold hover:underline">Solicitar mais informações
+            &rarr;</a>
         </div>
       </div>
     </div>
@@ -186,7 +232,8 @@
   <!-- GALERIA -->
   <section id="gallery" class="container mx-auto px-6 py-16 bg-white">
     <h2 class="text-3xl font-bold text-center">Galeria de Fotos</h2>
-    <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">Ambientes sofisticados e acabamentos de alto padrão.</p>
+    <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">Ambientes sofisticados e acabamentos de alto padrão.
+    </p>
 
     <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-container">
       <img src="assets/lotus-edge-boca-raton-91.jpeg"
@@ -295,24 +342,28 @@
   <section id="amenities" class="container mx-auto px-6 py-16 bg-slate-50">
     <h2 class="text-3xl font-bold text-center">Amenidades e Estilo de Vida</h2>
     <p class="text-center text-slate-700 max-w-3xl mx-auto mt-4">
-      O Lotus Edge oferece um clubhouse estilo resort, piscinas deslumbrantes, academia de última geração e proximidade com as melhores praias e centros comerciais de Boca Raton.
+      O Lotus Edge oferece um clubhouse estilo resort, piscinas deslumbrantes, academia de última geração e proximidade
+      com as melhores praias e centros comerciais de Boca Raton.
     </p>
 
     <div class="mt-8 grid gap-8 md:grid-cols-3">
       <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-md hover:shadow-lg transition">
         <div class="text-4xl mb-4">🏊‍♂️</div>
         <h3 class="font-semibold text-lg text-slate-900">Piscina Resort</h3>
-        <p class="mt-2 text-slate-700">Relaxe em uma piscina de design exclusivo com áreas de descanso e paisagismo tropical.</p>
+        <p class="mt-2 text-slate-700">Relaxe em uma piscina de design exclusivo com áreas de descanso e paisagismo
+          tropical.</p>
       </div>
       <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-md hover:shadow-lg transition">
         <div class="text-4xl mb-4">🥂</div>
         <h3 class="font-semibold text-lg text-slate-900">Clubhouse Exclusivo</h3>
-        <p class="mt-2 text-slate-700">Espaço social elegante perfeito para eventos, encontros e lazer com a família.</p>
+        <p class="mt-2 text-slate-700">Espaço social elegante perfeito para eventos, encontros e lazer com a família.
+        </p>
       </div>
       <div class="rounded-xl bg-white border border-slate-200 p-6 shadow-md hover:shadow-lg transition">
         <div class="text-4xl mb-4">📍</div>
         <h3 class="font-semibold text-lg text-slate-900">Localização Premium</h3>
-        <p class="mt-2 text-slate-700">A poucos minutos de escolas "A-rated", Town Center Mall e das praias da Flórida.</p>
+        <p class="mt-2 text-slate-700">A poucos minutos de escolas "A-rated", Town Center Mall e das praias da Flórida.
+        </p>
       </div>
     </div>
   </section>
@@ -322,31 +373,39 @@
     <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
       <!-- Imagem de Perfil -->
       <div class="w-full md:w-1/3">
-        <img src="assets/taysedantasimoveis.png" alt="Tayse Dantas - Consultora Imobiliária de Luxo" 
+        <img src="assets/taysedantasimoveis.png" alt="Tayse Dantas - Consultora Imobiliária de Luxo"
           class="w-full h-auto rounded-xl shadow-lg object-cover">
       </div>
-      
+
       <!-- Texto Bio -->
       <div class="w-full md:w-2/3 space-y-6 text-slate-700">
         <div>
           <h2 class="text-3xl font-bold text-slate-900">Sobre Tayse Dantas</h2>
           <p class="text-lg text-black font-semibold mt-1">Consultora Imobiliária de Luxo | Flórida</p>
         </div>
-        
+
         <p>
-          Com uma sólida bagagem executiva e uma perspectiva estratégica sobre investimentos imobiliários, Tayse Dantas atua como uma consultora de confiança no mercado imobiliário residencial e comercial de alto padrão em toda a Flórida, atendendo clientes dos EUA e internacionais com absoluta discrição, excelência e profissionalismo.
+          Com uma sólida bagagem executiva e uma perspectiva estratégica sobre investimentos imobiliários, Tayse Dantas
+          atua como uma consultora de confiança no mercado imobiliário residencial e comercial de alto padrão em toda a
+          Flórida, atendendo clientes dos EUA e internacionais com absoluta discrição, excelência e profissionalismo.
         </p>
 
         <p>
-          Do Brasil aos Estados Unidos, sua jornada foi moldada por liderança executiva, relacionamentos de alto nível e uma profunda compreensão de patrimônio, valor e posicionamento. Essa experiência se traduz em uma abordagem altamente seletiva ao mercado imobiliário americano, com foco em oportunidades exclusivas, ativos fora do mercado e projetos cuidadosamente curados.
+          Do Brasil aos Estados Unidos, sua jornada foi moldada por liderança executiva, relacionamentos de alto nível e
+          uma profunda compreensão de patrimônio, valor e posicionamento. Essa experiência se traduz em uma abordagem
+          altamente seletiva ao mercado imobiliário americano, com foco em oportunidades exclusivas, ativos fora do
+          mercado e projetos cuidadosamente curados.
         </p>
 
         <p>
-          Tayse assessora compradores e investidores em toda a Flórida, proporcionando acesso direto a incorporadoras, novas construções, residências de férias, propriedades geradoras de renda e ativos estratégicos, sempre através de uma abordagem personalizada centrada na preservação de capital e crescimento a longo prazo.
+          Tayse assessora compradores e investidores em toda a Flórida, proporcionando acesso direto a incorporadoras,
+          novas construções, residências de férias, propriedades geradoras de renda e ativos estratégicos, sempre
+          através de uma abordagem personalizada centrada na preservação de capital e crescimento a longo prazo.
         </p>
 
         <p>
-          Reconhecida por seu olhar refinado, comunicação clara e orientação ética em cada transação, ela acredita que o mercado imobiliário vai além da propriedade — é uma decisão de estilo de vida, legado e visão de longo prazo.
+          Reconhecida por seu olhar refinado, comunicação clara e orientação ética em cada transação, ela acredita que o
+          mercado imobiliário vai além da propriedade — é uma decisão de estilo de vida, legado e visão de longo prazo.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-sm font-medium text-slate-800">
@@ -375,34 +434,35 @@
     </p>
 
     <div class="mt-10 grid md:grid-cols-2 gap-10 items-start">
-      
+
       <!-- Informações de Contato -->
       <div class="text-slate-700 space-y-4 bg-slate-50 p-8 rounded-2xl border border-slate-100 h-full">
         <h3 class="font-bold text-xl text-slate-900 mb-4">Tayse Dantas</h3>
         <p class="font-medium text-slate-900">Sales Associate – Licença FL #SL3609603</p>
         <p>Vinculada à <strong>Douglas Elliman Real Estate</strong></p>
-        
+
         <div class="pt-4 space-y-3">
           <p class="flex items-start gap-3">
-            <span>📍</span> 
+            <span>📍</span>
             <span>444 East Palmetto Park Rd,<br>Boca Raton, FL 33432</span>
           </p>
           <p class="flex items-center gap-3">
-            <span>📞</span> 
+            <span>📞</span>
             <a href="tel:+15613765295" class="underline font-semibold hover:text-black transition">+1 (561) 376-5295</a>
           </p>
           <p class="flex items-center gap-3">
-            <span>✉️</span> 
-            <a href="mailto:tayse.dantas@elliman.com" class="underline font-semibold hover:text-black transition">tayse.dantas@elliman.com</a>
+            <span>✉️</span>
+            <a href="mailto:tayse.dantas@elliman.com"
+              class="underline font-semibold hover:text-black transition">tayse.dantas@elliman.com</a>
           </p>
         </div>
 
         <div class="pt-6">
-           <a href="https://wa.me/15613765295" target="_blank"
-             class="inline-flex w-full justify-center items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500 transition">
-             <img src="assets/whatsapp.png" alt="WhatsApp" class="w-5 h-5 brightness-0 invert" />
-             Conversar no WhatsApp
-           </a>
+          <a href="https://wa.me/15613765295" target="_blank"
+            class="inline-flex w-full justify-center items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500 transition">
+            <img src="assets/whatsapp.png" alt="WhatsApp" class="w-5 h-5 brightness-0 invert" />
+            Conversar no WhatsApp
+          </a>
         </div>
       </div>
 
@@ -411,7 +471,8 @@
         <div>
           <label class="block text-sm font-semibold text-slate-700">Nome Completo</label>
           <input type="text" name="Nome" required
-            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition" placeholder="Seu nome" />
+            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition"
+            placeholder="Seu nome" />
         </div>
 
         <div>
@@ -424,7 +485,8 @@
         <div>
           <label class="block text-sm font-semibold text-slate-700">WhatsApp / Telefone</label>
           <input type="tel" name="Telefone" required
-            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition" placeholder="+55 (11) 99999-9999" />
+            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition"
+            placeholder="+55 (11) 99999-9999" />
         </div>
 
         <div>
@@ -438,7 +500,8 @@
           </select>
         </div>
 
-        <button type="submit" class="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-zinc-800 transition shadow-lg">
+        <button type="submit"
+          class="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-zinc-800 transition shadow-lg">
           Enviar Mensagem
         </button>
         <p class="text-xs text-center text-slate-500 mt-2">
@@ -461,7 +524,7 @@
 
       <!-- Grid de 3 Colunas: Bio, Contato, Social -->
       <div class="grid md:grid-cols-3 gap-12 mb-12">
-        
+
         <!-- Coluna 1: Bio / Corretora -->
         <div>
           <h3 class="text-xl font-bold mb-4">Tayse Dantas</h3>
@@ -472,9 +535,10 @@
             trazendo excelência e expertise para o mercado imobiliário de luxo na Flórida.
           </p>
           <div class="mt-6">
-             <a href="https://www.elliman.com/agent/tayse-dantas/1230150" target="_blank" class="inline-block">
-               <img src="assets/douglasalliman.png" alt="Douglas Elliman Real Estate" class="h-10 opacity-90 hover:opacity-100 transition">
-             </a>
+            <a href="https://www.elliman.com/agent/tayse-dantas/1230150" target="_blank" class="inline-block">
+              <img src="assets/douglasalliman.png" alt="Douglas Elliman Real Estate"
+                class="h-10 opacity-90 hover:opacity-100 transition">
+            </a>
           </div>
         </div>
 
@@ -551,7 +615,7 @@
 
       <!-- Disclaimers Legais (Google Ads Requirement) -->
       <div class="border-t border-white/10 pt-8 text-center space-y-4 text-xs text-slate-400">
-        
+
         <p>Equal Housing Opportunity.</p>
 
         <p>
@@ -578,4 +642,5 @@
   </footer>
 
 </body>
+
 </html>
