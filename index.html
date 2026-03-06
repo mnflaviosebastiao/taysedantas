@@ -7,8 +7,8 @@
   <title>Lotus Edge | Luxury Homes in Boca Raton</title>
   <meta name="description"
     content="Luxury homes at Lotus Edge in Boca Raton, Florida. Experience modern design, resort-style amenities, and the best of Florida living with Tayse Dantas, licensed Sales Associate at Douglas Elliman Real Estate.">
-  <!-- Tailwind CSS -->
-  <link href="./dist/output.css" rel="stylesheet">
+
+    <link href="./dist/output.css" rel="stylesheet">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.dantashomes.com" />
 
@@ -78,17 +78,12 @@
     menuBtn.addEventListener('click', toggleMenu);
   </script>
 
-  <!-- Hero -->
   <section class="relative h-[85vh] overflow-hidden">
-    <!-- Slideshow Background -->
     <div id="hero-slider" class="absolute inset-0 z-0">
-      <!-- Images added via JS -->
     </div>
 
-    <!-- Overlay -->
     <div class="absolute inset-0 bg-black/40 z-10"></div>
 
-    <!-- Content -->
     <div
       class="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center text-white">
       <img src="assets/logo-taysecorretora.png" alt="Tayse Dantas Realtor"
@@ -127,7 +122,6 @@
     if (sliderContainer) {
       let currentSlide = 0;
 
-      // Preload images and create elements
       heroImages.forEach((src, index) => {
         const img = document.createElement('div');
         img.className = `absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
@@ -144,49 +138,10 @@
 
         slides[currentSlide].classList.remove('opacity-0');
         slides[currentSlide].classList.add('opacity-100');
-      }, 5000); // Change every 5 seconds
+      }, 5000);
     }
   </script>
 
-  <!-- Video Tour -->
-  <section id="video-tour" class="container mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold text-center">Discover Lotus Edge</h2>
-    <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">
-      Experience the interior and atmosphere of these stunning residences.
-    </p>
-
-    <div class="mt-8 grid gap-6 lg:grid-cols-2">
-      <div class="aspect-video w-full overflow-hidden rounded-xl shadow-lg">
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed/FkAwari_4ik" title="YouTube video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="p-4 space-y-4 text-sm rounded-xl">
-        <h3 class="font-bold text-lg text-slate-900">Exclusive Details</h3>
-        <p class="text-slate-700">
-          Discover what sets Lotus Edge apart with this exclusive video showcasing open-concept living areas and luxury
-          finishes.
-        </p>
-        <ul class="list-disc list-inside text-slate-700 space-y-2 pt-2">
-          <li>100% Contemporary Design</li>
-          <li>Spacious and sunlit floor plans</li>
-          <li>Premium finishes throughout</li>
-          <li>Gated community with 24h security</li>
-        </ul>
-        <p class="text-slate-700 pt-2 font-medium">
-          Perfect for investors, families, and anyone seeking the best of the Boca Raton real estate market.
-        </p>
-        <div class="pt-4">
-          <a href="#contact" class="inline-block text-black font-semibold hover:underline">Request more information
-            &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
   <section id="gallery" class="container mx-auto px-6 py-16 bg-white">
     <h2 class="text-3xl font-bold text-center">Gallery</h2>
     <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">Beautiful spaces and designer finishes throughout.</p>
@@ -219,7 +174,6 @@
     </div>
   </section>
 
-  <!-- Gallery Modal -->
   <div id="imageModal"
     class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
     <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-gray-300 z-[110]">
@@ -252,7 +206,6 @@
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
 
-    // Initialize images on load
     document.addEventListener('DOMContentLoaded', () => {
       galleryImages = Array.from(document.querySelectorAll('#gallery-container img')).map(img => img.src);
     });
@@ -279,7 +232,6 @@
       modalImg.src = galleryImages[currentImageIndex];
     }
 
-    // Keyboard navigation
     document.addEventListener('keydown', function (e) {
       if (modal.classList.contains('hidden')) return;
 
@@ -288,13 +240,11 @@
       if (e.key === 'ArrowLeft') prevImage();
     });
 
-    // Close on backdrop click
     modal.addEventListener('click', function (e) {
       if (e.target === modal) closeModal();
     });
   </script>
 
-  <!-- Amenities + Lifestyle -->
   <section id="amenities" class="container mx-auto px-6 py-16">
     <h2 class="text-3xl font-bold text-center">Amenities & Lifestyle</h2>
     <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">Resort-style clubhouse, pool, fitness and community
@@ -316,7 +266,6 @@
     </div>
   </section>
 
-  <!-- About Tayse (NEW) -->
   <section class="container mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
       <!-- Profile Image -->
@@ -374,7 +323,6 @@
     </div>
   </section>
 
-  <!-- Contact / Form - Enhanced -->
   <section id="contact" class="container mx-auto px-6 py-16 bg-white rounded-xl shadow my-10">
     <h2 class="text-3xl font-bold text-center">Get In Touch</h2>
     <p class="text-center text-slate-700 max-w-2xl mx-auto mt-2">
@@ -383,7 +331,6 @@
 
     <div class="mt-10 grid md:grid-cols-2 gap-10 items-start">
 
-      <!-- Contact Info & Agent Profile -->
       <div class="text-slate-700 space-y-4 bg-slate-50 p-8 rounded-2xl border border-slate-100 h-full">
         <h3 class="font-bold text-xl text-slate-900 mb-2">Tayse Dantas</h3>
         <p class="font-medium text-slate-900">Sales Associate – Florida License #SL3609603</p>
@@ -406,89 +353,17 @@
           </p>
         </div>
 
-        <div class="pt-6">
-          <a href="https://wa.me/15613765295?text=Hello%2C%20I%20would%20like%20more%20information%20about%20Lotus%20Edge%2C%20please."
-            target="_blank"
-            class="inline-flex w-full justify-center items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500 transition">
-            <img src="assets/whatsapp.png" alt="WhatsApp" class="w-5 h-5 brightness-0 invert" />
-            Chat on WhatsApp
-          </a>
-        </div>
       </div>
 
-      <!-- Contact Form -->
-      <form id="contactForm" class="space-y-4">
-        <div>
-          <label class="block text-sm font-semibold text-slate-700">Full Name</label>
-          <input type="text" name="Name" required
-            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition"
-            placeholder="Your name" />
-        </div>
 
-        <div>
-          <label class="block text-sm font-semibold text-slate-700">Email Address</label>
-          <input type="email" name="Email" required
-            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition"
-            placeholder="you@example.com" />
-        </div>
-
-        <div>
-          <label class="block text-sm font-semibold text-slate-700">Phone / WhatsApp</label>
-          <input type="tel" name="Phone" required
-            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-3 focus:ring-black focus:border-black transition"
-            placeholder="+1 (555) 000-0000" />
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-sm font-semibold text-slate-700">Primary Goal</label>
-            <select name="Goal"
-              class="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 focus:ring-black focus:border-black transition">
-              <option value="Invest">Investment</option>
-              <option value="Live">Primary Residence</option>
-              <option value="Second Home">Vacation Home</option>
-              <option value="Relocation">Relocation</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-slate-700">Budget Range</label>
-            <select name="Budget"
-              class="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 focus:ring-black focus:border-black transition">
-              <option value="1M-2M">$1M - $2M</option>
-              <option value="2M-3M">$2M - $3M</option>
-              <option value="3M+">$3M+</option>
-              <option value="Not Sure">Not sure yet</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" id="submitButton"
-          class="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-zinc-800 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
-          Request Information
-        </button>
-        <p id="formStatus" class="text-center text-sm mt-2 hidden"></p>
-        <p class="text-xs text-center text-slate-500 mt-2">
-          Your information is secure. No spam.
-        </p>
-      </form>
     </div>
   </section>
 
-  <!-- Sticky WhatsApp -->
-  <a href="https://wa.me/15613765295?text=Hello%2C%20I%20would%20like%20more%20information%20about%20Lotus%20Edge%2C%20please."
-    class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500">
-    <img src="assets/whatsapp.png" alt="WhatsApp" class="w-6 h-6" />
-    WhatsApp Agent
-  </a>
-
-  <!-- Footer -->
   <footer class="bg-black text-white py-16 mt-20">
     <div class="container mx-auto px-6">
 
-      <!-- Grid 3 Columns: Bio, Contact, Social -->
       <div class="grid md:grid-cols-3 gap-12 mb-12">
 
-        <!-- Column 1: Bio / Broker -->
         <div>
           <h3 class="text-xl font-bold mb-4">Tayse Dantas</h3>
           <p class="text-slate-400 text-sm mb-2">Sales Associate</p>
@@ -499,12 +374,10 @@
           </p>
         </div>
 
-        <!-- Column 2: Contact -->
         <div>
           <h3 class="text-lg font-semibold mb-4 text-white">Contact</h3>
           <ul class="space-y-4 text-slate-400 text-sm">
             <li class="flex items-center gap-3">
-              <!-- Icon Map -->
               <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -514,7 +387,6 @@
               <span>444 East Palmetto Park Rd,<br>Boca Raton, FL 33432</span>
             </li>
             <li class="flex items-center gap-3">
-              <!-- Icon Email -->
               <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
@@ -523,7 +395,6 @@
               <a href="mailto:tayse.dantas@elliman.com" class="hover:text-white transition">tayse.dantas@elliman.com</a>
             </li>
             <li class="flex items-center gap-3">
-              <!-- Icon Phone -->
               <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
@@ -533,44 +404,8 @@
             </li>
           </ul>
         </div>
-
-        <!-- Column 3: Social (Preserved) -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4 text-white">Follow Me</h3>
-          <div class="flex gap-4">
-            <a href="https://www.instagram.com/taysedantas_realtor" target="_blank"
-              class="bg-white/10 p-3 rounded-full hover:bg-white/20 transition" aria-label="Instagram">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </a>
-            <a href="https://www.youtube.com/@taysedantasrealtor" target="_blank"
-              class="bg-white/10 p-3 rounded-full hover:bg-white/20 transition" aria-label="YouTube">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-              </svg>
-            </a>
-            <a href="https://facebook.com/tayse.dantas.54" target="_blank"
-              class="bg-white/10 p-3 rounded-full hover:bg-white/20 transition" aria-label="Facebook">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-              </svg>
-            </a>
-            <a href="https://linkedin.com/in/tayse-dantas-realtor" target="_blank"
-              class="bg-white/10 p-3 rounded-full hover:bg-white/20 transition" aria-label="LinkedIn">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h5v-8.306c0-4.613 6.111-5.006 6.111 0v8.306h4.869v-10.27c0-5.322-5.74-6.126-8.58-3.075v-2.661z" />
-              </svg>
-            </a>
-          </div>
-        </div>
       </div>
 
-      <!-- Legal Disclaimers (Google Ads Requirement) -->
       <div class="border-t border-white/10 pt-8 text-center space-y-4 text-xs text-slate-400">
 
         <p>Equal Housing Opportunity.</p>
@@ -597,52 +432,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Google Sheets Script Integration -->
-  <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWJhqnPie3VJMdBgXo6MEGqx11oQqXmgLq9m0wvwti63at5ZJPK9thziVTJIAeLcPS/exec';
-
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitButton');
-      const statusMsg = document.getElementById('formStatus');
-
-      // UI Feedback
-      btn.disabled = true;
-      btn.innerText = 'Sending...';
-      statusMsg.innerText = '';
-      statusMsg.classList.remove('hidden', 'text-green-500', 'text-red-500');
-
-      // Prepare Params
-      const formData = new FormData(this);
-      const params = new URLSearchParams();
-      for (const pair of formData) {
-        params.append(pair[0], pair[1]);
-      }
-
-      // Send Data
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: params,
-        mode: 'no-cors' // Important for Google Apps Script
-      })
-        .then(() => {
-          statusMsg.innerText = 'Message sent successfully! We will contact you soon.';
-          statusMsg.classList.add('text-green-500');
-          this.reset();
-        })
-        .catch(error => {
-          console.error('Error!', error.message);
-          statusMsg.innerText = 'Error! Please try contacting us via WhatsApp.';
-          statusMsg.classList.add('text-red-500');
-        })
-        .finally(() => {
-          btn.disabled = false;
-          btn.innerText = 'Request Info';
-        });
-    });
-  </script>
-
 </body>
 
 </html>
