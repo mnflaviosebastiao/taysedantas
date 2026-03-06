@@ -438,7 +438,7 @@
       </div>
 
       <!-- Formulário de Contato -->
-      <form class="space-y-4">
+      <form id="contactForm" class="space-y-4">
         <div>
           <label class="block text-sm font-semibold text-slate-700">Nome Completo</label>
           <input type="text" name="Nome" required
@@ -471,10 +471,11 @@
           </select>
         </div>
 
-        <button type="submit"
+        <button type="submit" id="submitButton"
           class="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-zinc-800 transition shadow-lg">
           Enviar Mensagem
         </button>
+        <p id="formStatus" class="text-center text-sm mt-2 hidden"></p>
         <p class="text-xs text-center text-slate-500 mt-2">
           Seus dados estão seguros. Não enviamos spam.
         </p>
@@ -611,6 +612,53 @@
       </div>
     </div>
   </footer>
+
+  <!-- Google Sheets Script Integration -->
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWJhqnPie3VJMdBgXo6MEGqx11oQqXmgLq9m0wvwti63at5ZJPK9thziVTJIAeLcPS/exec';
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitButton');
+      const statusMsg = document.getElementById('formStatus');
+
+      // UI Feedback
+      btn.disabled = true;
+      btn.innerText = 'Enviando...';
+      statusMsg.innerText = '';
+      statusMsg.classList.remove('hidden', 'text-green-500', 'text-red-500');
+
+      // Prepare Params
+      const formData = new FormData(this);
+      const params = new URLSearchParams();
+      for (const pair of formData) {
+        params.append(pair[0], pair[1]);
+      }
+
+      // Send Data
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: params,
+        mode: 'no-cors' // Important for Google Apps Script
+      })
+        .then(() => {
+          statusMsg.innerText = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
+          statusMsg.classList.add('text-green-500');
+          statusMsg.classList.remove('hidden');
+          this.reset();
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          statusMsg.innerText = 'Ocorreu um erro. Por favor, tente novamente ou contate-nos via WhatsApp.';
+          statusMsg.classList.add('text-red-500');
+          statusMsg.classList.remove('hidden');
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.innerText = 'Enviar Mensagem';
+        });
+    });
+  </script>
 
 </body>
 
